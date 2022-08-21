@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>crudpen site</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="fontcss/all.min.css">
+    <link rel="preconnect" href="fontcss/fontawesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/41e7888004.js" crossorigin="anonymous"></script>
+    <style>
+      .menu {
+        left: 0;
+        transition: all .5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+  svg {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  z-index: 1000;
+  transform: rotate(39deg);
+}
+svg circle {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: #131b2a;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+svg circle:nth-child(2)
+{
+  stroke-dasharray:330;
+  stroke-dashoffset:80;
+}
+svg circle:nth-child(2){
+  stroke-dashoffset:calc(440 - (440 * 90) / 100);
+  stroke:#6279e7;
+}
+.percent {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #192233;
+  z-index: 1000;
+}
+.percent .number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+/*  */
+.bottom-layer::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #212C42;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(53, 68, 91);
+  border-radius: 100px;
+}
+ </style>
+</head>
+<body class="font-poppins text-[0.88rem] bg-[hsl(219,34%,15%)] text-white">
+  <nav class="flex justify-center items-center fixed z-[2000] bg-[#192233] w-full">
+    <div class="w-full flex justify-between items-center">
+      <div class="flex justify-between lg:justify-start items-center w-full px-7 lg:py-0 lg:px-0">
+        <div class="block lg:hidden img-logo rounded-full bg-pink-400 p-[0.2rem] w-12 h-12">
+          <img src="images/great.jpg" alt="" class="rounded-full w-full">
+        </div>
+        <div class="logo flex justify-between items-center lg:ml-8 lg:mr-16 py-5">
+          <i class="fa-solid fa-rocket text-3xl lg:mr-5"></i>
+          <h3 class="text-xl font-medium hidden lg:block">PR Club</h3>
+        </div>
+        <div class="hamburger lg:hidden">
+          <div class="bg-gray-400 h-[0.2rem] w-[37px]"></div>
+          <div class="bg-gray-400 h-[0.2rem] w-[37px] mt-2"></div>
+          <div class="bg-gray-400 h-[0.2rem] w-[37px] mt-2"></div>
+        </div>
+        <ul class="hidden lg:flex justify-between items-center gap-8 text-xs ml-8">
+          <li class="text-gray-400 transition-all hover:mb-4">Market</li>
+          <li class="text-gray-400 transition-all hover:mb-4">Exchange</li>
+          <li class="text-gray-400 transition-all hover:mb-4">Wallet</li>
+          <li class="text-gray-400 transition-all hover:mb-4">Social</li>
+          <li class="text-gray-400 transition-all hover:mb-4">My History</li>
+        </ul>
+      </div>
+      <ul class="hidden lg:flex justify-between items-center gap-8 text-xs mr-8">
+        <li><i class="fa-solid fa-message text-gray-400 text-lg transition-all hover:mb-4"></i></li>
+        <li><i class="fa fa-envelope-o text-gray-400 text-lg transition-all hover:mb-4" aria-hidden="true"></i></li>
+        <li><i class="fa-solid fa-gear text-gray-400 text-lg transition-all hover:mb-4"></i></li>
+        <li><i class="fa fa-arrow-circle-right text-gray-400 text-lg transition-all hover:mb-4" aria-hidden="true"></i></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <div class="flex justify-evenly h-full relative left-0 top-[70px]">
+    <aside class="h-screen bg-[#192233] px-5 fixed top-0 lg:top-[80px] -left-full lg:left-0 transition-all duration-[0.5s] z-[2000] pt-5 lg:pt-0">
+      <div class="">
+        <!-- top layer of dashboard-->
+        <div class="layer1 px-4">
+          <!-- profile-sec -->
+          <div class="flex flex-col justify-between items-start gap-4">
+            <div class="img-logo rounded-full bg-pink-400 p-[0.2rem] w-12 h-12">
+              <img src="images/great.jpg" alt="" class="rounded-full w-full">
+            </div>
+            <h4 class="capitalize text-sm">Chukwuka Great</h4>
+            <div class="flex items-center">
+              <button class="px-3 py-[0.2px] text-xs text-gray-700 rounded-full bg-pink-400 mr-4">START</button>
+              <p class="text-[#655dab] text-[0.7rem]">dfhjdkh</p>
+            </div>
+            <button class="px-3 py-2 bg-[#6279e7] text-gray-200 rounded-full text-[0.6rem]">octopu ands octopus 21</button>
+          </div>
+  
+          <!-- <div class="h-[0.2px] w-full bg-gray-700 mt-5"></div> -->
+
+          <div class="pt-8 flex items-start gap-7">
+            <div class="flex flex-col gap-1">
+              <p class="text-gray-400 text-[0.7rem]">sdlofa</p>
+              <h3 class="semibold text-sm">5 000 p</h3>
+              <p class="text-[#6279e7] text-[0.7rem]">sssdlo</p>
+            </div>
+            <div class="flex flex-col gap-1">
+              <p class="text-gray-400 text-[0.7rem]">sdlofa</p>
+              <h3 class="semibold text-sm">5 000 p</h3>
+            </div>
+          </div>
+
+          <!-- <div class="h-[0.2px] w-full bg-gray-700 mt-5"></div> -->
+        </div>
+
+        <div class="h-[0.2px] w-full bg-gray-700 mt-5"></div>
+
+        <!-- bottmo layer dashboard -->
+        <div class="bottom-layer flex flex-col gap-7 h-[40vh] px-4 relative top-9 text-gray-400 overflow-y-scroll">
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-house"></i>
+            <span class="house-icon ml-2 text-xs">home</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-user"></i>
+            <span class="house-icon ml-2 text-xs">customer</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-industry"></i>
+            <span class="house-icon ml-2 text-xs">dashboard</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-chart-line"></i>
+            <span class="house-icon ml-2 text-xs">Analytics</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="house-icon ml-2 text-xs">message <span class="text-[#6279e7]">26</span></span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-book"></i>
+            <span class="house-icon ml-2 text-xs">Products</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-4 before:opacity-0  before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-clock"></i>
+            <span class="house-icon ml-2 text-xs">History</span>
+          </a>
+          <a href="#" class="hover:text-[#6279e7] active:text-[#6279e7] focus:text-[#6279e7] flex items-center relative before:absolute before:w-1 before:h-full before:bg-[#6279e7] before:active:text-[#6279e7] before:focus:text-[#6279e7] before:focus:opacity-100 before:-left-8 before:opacity-0 before:transition-opacity before:duration-500 transition-all duration-300">
+            <i class="fa-solid fa-gear"></i>
+            <span class="house-icon ml-2 text-xs">Settings</span>
+          </a>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- main -->
+    <div class="bg-[#212C42] lg:ml-40 w-full lg:w-[calc(100%-215.44px)] overflow-x-hidden relative left-0 rounded-[1.9rem] rounded-tr-[1.9rem] px-4 lg:px-8 pb-8 flex flex-col">
+      <h2 class="text-xl lg:text-2xl py-10 capitalize">YOU ARE WELCOME, CHUKWUKA</h2>
+      <!-- desktop -->
+      <div class="bg-[#212C42] h-screen rounded-tl-[1.9rem] rounded-tr-[1.9rem] hidden lg:grid lg:grid-cols-6 grid-rows-[repeat(12,_minmax(0,_1fr));] gap-7">
+        <div class="rounded-xl row-span-4 col-span-4 items-center mb-8 lg:mb-0 bg-[#6D3CC7] p-10 relative overflow-hidden">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col lg:flex-row gap-5 w-full">
+              <h3 class="bold text-sm">6oHYC 3a aKTNBHOCTB</h3>
+              <button class="text-white font-light text-[0.6rem] bg-[#E06CB5] rounded-full px-2 py-[0.20rem]">+ MBCAU noAnWCKH</button>
+            </div>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col lg:flex-row justify-between w-full">
+                <p class="text-gray-300 font-light text-[0.6rem]">OCTanobcb Bp8MAMN</p>
+                <p class="text-gray-300 font-light text-[0.6rem]">OCTanobcb Bp8MAMN</p>
+              </div>
+              <div class="flex justify-between items-center gap-7">
+                <div class="flex items-center">
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <i class="fa-solid fa-user-group"></i>
+                  <h3 class="text-lg">10 YEN</h3>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <img src="./images/BackgroundEraser_20220805_123438753.png" alt="" class="absolute lg:-top-9 xl:-top-32 lg:-right-40 xl:-right-56">
+        </div>
+        <div class="bg-[#6782F7]  relative rounded-xl mb-8 lg:mb-0 lg:col-start-5 lg:col-end-7 row-span-6 p-6 overflow-hidden">
+          <div class="bg-[#7890FC] absolute -top-20 -right-16 rounded-full h-56 w-56 z-10"></div>
+          <div class="flex flex-col justify-between h-full">
+            <h3 class="text-white relative z-10">napTHepokaA nporpaMMa</h3>
+            <div class="z-10">
+              <p class="text-gray-200 font-light text-[0.69rem]">Lorem ipsum dolor sit.</p>
+              <div class="flex gap-2 mt-1">
+                <div class="flex relative">
+                  <input type="text" placeholder="...Enter wallet address" class="p-0 pl-2 max-w-[9rem] placeholder:text-[0.69rem] placeholder:text-gray-300 bg-transparent border border-white rounded-lg">
+                  <i class="fa fa-files-o cursor-pointer text-white text-xl absolute top-1/2 transform -translate-y-1/2 right-3" aria-hidden="true"></i>
+                </div>
+                <div class="flex gap-3">
+                  <i class="fa fa-vk text-2xl" aria-hidden="true"></i>
+                  <i class="fa-brands fa-square-facebook text-2xl"></i>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-between gap-3 relative z-10">
+              <div class="flex flex-col justify-center gap-4">
+                <i class="fa-solid fa-user-group text-white"></i>
+                <h3 class="semibold text-3xl">100</h3>
+                <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaT <br> NcTyKD</p>
+              </div>
+              <div class="flex flex-col justify-center gap-4">
+                <i class="fa-solid fa-user-group text-white"></i>
+                <h3 class="semibold text-3xl">53</h3>
+                <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+              </div>
+              <div class="flex flex-col justify-center gap-4">
+                <i class="fa-solid fa-user-group text-white"></i>
+                <h3 class="semibold text-3xl">34</h3>
+                <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#192233] mb-8 lg:mb-0 rounded-xl row-span-5 col-span-4 flex flex-col">
+          <h3 class="bold text-xs pt-8 pl-8">6npxa <span class="text-xs">aKTNBHOCTN</span></h3>
+          <div class="px-6 pt-2 w-full flex justify-between items-center">
+            <div class="percent">
+              <svg class="flex justify-center">
+                <circle cx="70" cy="70" r="70"></circle>
+                <circle cx="70" cy="70" r="70"></circle>
+              </svg>
+              <div class="number flex flex-col">
+                <h2 class="text-white text-3xl block">65<span>%</span></h2>
+                <p class="text-gray-300 font-light text-[0.6rem] block">affdssf dfdf dfdfd</p>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between p-4 h-full">
+              <p class="text-gray-300 font-light text-[0.6rem]">MoncTaTNcTyKD</p>
+              <div class="flex justify-between gap-3">
+                <i class="fa-solid fa-user-group text-gray-400"></i>
+                <h3 class="semibold text-base">100 434</h3>
+              </div>
+              <div class="flex justify-between">
+                <i class="fa-solid fa-heart-circle-check text-gray-400"></i>
+                <h3 class="semibold text-base">100 434</h3>
+              </div>
+              <div class="flex justify-between">
+                <i class="fa-solid fa-heart-circle-check text-gray-400"></i>
+                <h3 class="semibold text-base">3 999</h3>
+              </div>
+            </div>
+            <div class="flex flex-col justify-center h-full border border-gray-700 rounded-xl">
+              <div class="flex justify-between h-full p-4 gap-3">
+                <div class="flex flex-col justify-between gap-5 ">
+                  <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaTNcTyKD</p>
+                  <i class="fa-solid fa-user-group text-gray-400"></i>
+                  <h3 class="semibold text-3xl">24</h3>
+                  <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaT <br> NcTyKD</p>
+                </div>
+                <div class="flex flex-col justify-between gap-5">
+                  <p class="text-gray-300 font-light text-[0.6rem]"></p>
+                  <i class="fa-solid fa-user-group text-gray-400"></i>
+                  <h3 class="semibold text-3xl">100</h3>
+                  <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#192233] rounded-xl col-start-5 col-end-7 row-span-5 p-6 flex flex-col justify-between">
+          <div class="flex justify-between">
+            <h3 class="bold text-sm">6anaHC</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">BblseCTN ></button>
+          </div>
+          <div class="flex gap-7">
+            <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+            <h3 class="semibold text-3xl">45 350P</h3>
+          </div>
+          <div>
+            <h3 class="bold text-sm">3apa6OTaHO</h3>
+          </div>
+          <div class="flex justify-between">
+            <div class="w-full">
+              <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+            </div>
+            <div class="w-full">
+              <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+            </div>
+            <div class="w-full">
+              <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="flex justify-between">
+              <p class="bold text-sm">1350P</p>
+              <p class="bold text-sm">424 350P</p>
+              <p class="bold text-sm">4 342 350P</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#192233] rounded-xl row-span-2 col-span-4 px-6 flex items-center justify-center gap-3 w-full">
+          <i class="fa-solid fa-circle-check text-2xl"></i>
+          <div class="flex flex-col justify-center">
+            <p class="text-gray-400 font-light text-[0.74rem]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
+            <h3 class="bold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, jsdjtur! Lorem ipsum dolor sit</h3>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#212C42] -mt-7 rounded-tl-[1.9rem] rounded-tr-[1.9rem] w-[706px] hidden lg:flex flex-col gap-7">
+        <div class="rounded-xl w-full h-[180.38px] flex flex-col lg:flex-row justify-between gap-7">
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">START</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">3650 / <span class="text-gray-400">5000</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">394 / <span class="text-gray-400">800</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+        </div>
+        <div class="rounded-xl w-full h-[180.38px] flex flex-col lg:flex-row justify-between gap-7">
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">395 / <span class="text-gray-400">800</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">3%</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">94 KAMenta</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+        </div>
+      </div>
+
+      <!-- mobile -->
+      <div class="lg:hidden w-full">
+        <div class="rounded-3xl items-center mb-8 lg:mb-0 bg-[#6D3CC7] p-4 relative overflow-hidden">
+          <div class="flex flex-col gap-5">
+            <div class="flex flex-col items-start lg:flex-row gap-5">
+              <h3 class="bold text-sm">6oHYC 3a aKTNBHOCTB</h3>
+              <button class="text-white font-light text-[0.6rem] bg-[#E06CB5] rounded-full px-2 py-[0.20rem]">+ MBCAU noAnWCKH</button>
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-user-group"></i>
+              <h3 class="text-lg">10 YEN</h3>
+            </div>
+            <div class="flex flex-col gap-5">
+              <div class="flex flex-col lg:flex-row justify-between w-full">
+                <p class="text-gray-300 font-light text-[0.6rem]">OCTanobcb Bp8MAMN</p>
+                <p class="text-gray-300 font-light text-[0.6rem] mt-6">OCTanobcb Bp8MAMN</p>
+              </div>
+              <div class="flex justify-between items-center gap-7">
+                <div class="flex items-center">
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                  <span class="p-2 text-bold">:</span>
+                  <div class="">
+                    <span class="p-2 text-base rounded-md border border-gray-400">10</span>
+                    <p class="text-gray-300 font-light text-[0.6rem] block mt-2">affdsfd</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <img src="./images/BackgroundEraser_20220805_123438753.png" alt="" class="absolute -top-20 -right-56">
+        </div>
+      <div class="bg-[#6782F7] relative rounded-xl mb-8 lg:mb-0 lg:col-start-5 lg:col-end-7 row-span-6 p-6 overflow-hidden">
+        <div class="bg-[#7890FC] absolute -top-20 -right-16 rounded-full h-56 w-56 z-10"></div>
+        <div class="flex flex-col justify-between h-full">
+          <h3 class="text-white relative z-10">napTHepokaA nporpaMMa</h3>
+          <div class="z-10 mt-4">
+            <p class="text-gray-200 font-light text-[0.69rem]">Lorem ipsum dolor sit.</p>
+            <div class="flex gap-2 mt-1">
+              <div class="flex relative">
+                <input type="text" placeholder="Enter wallet address.." class="p-0 pl-1 h-11 max-w-[9rem] placeholder:text-[0.69rem] placeholder:text-gray-300 bg-transparent border border-white rounded-lg">
+                <i class="fa fa-files-o cursor-pointer text-white text-sm absolute top-1/2 transform -translate-y-1/2 right-3" aria-hidden="true"></i>
+              </div>
+              <div class="flex gap-3">
+                <i class="fa fa-vk text-5xl" aria-hidden="true"></i>
+                <i class="fa-brands fa-square-facebook text-5xl"></i>
+              </div>
+            </div>
+          </div>
+          <div class="flex justify-between gap-3 mt-4 relative z-10">
+            <div class="flex flex-col justify-center gap-3">
+              <i class="fa-solid fa-user-group text-white"></i>
+              <h3 class="semibold text-3xl">100</h3>
+              <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaT <br> NcTyKD</p>
+            </div>
+            <div class="flex flex-col justify-center gap-3">
+              <i class="fa-solid fa-user-group text-white"></i>
+              <h3 class="semibold text-3xl">53</h3>
+              <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+            </div>
+            <div class="flex flex-col justify-center gap-3">
+              <i class="fa-solid fa-user-group text-white"></i>
+              <h3 class="semibold text-3xl">34</h3>
+              <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#192233] rounded-xl col-start-5 col-end-7 row-span-5 p-6 flex flex-col justify-between gap-6 md:gap-4">
+        <div class="flex justify-between  md:w-auto">
+          <h3 class="bold text-sm">6anaHC</h3>
+          <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">BblseCTN ></button>
+        </div>
+        <div class="flex gap-7">
+          <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+          <h3 class="semibold text-3xl">45 350P</h3>
+        </div>
+        <div>
+          <h3 class="bold text-sm">3apa6OTaHO</h3>
+        </div>
+        <div class="flex justify-start gap-12">
+          <div class="">
+            <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+          </div>
+          <div class="">
+            <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+          </div>
+          <div class="">
+            <i class="fa fa-calendar-o text-white text-2xl transform rotate-90" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div class="flex justify-start gap-6">
+          <p class="bold text-sm">1350P</p>
+          <p class="bold text-sm">424 350P</p>
+          <p class="bold text-sm">4 342 350P</p>
+        </div>
+      </div>
+      <div class="bg-[#192233] mb-8 lg:mb-0 mt-8 rounded-xl flex flex-col">
+        <h3 class="bold text-xs pt-8 pl-8">6npxa <span class="text-xs">aKTNBHOCTN</span></h3>
+        <div class="px-6 pt-2 mt-3 w-full flex justify-between items-center">
+          <div class="percent">
+            <svg class="flex justify-center">
+              <circle cx="70" cy="70" r="70"></circle>
+              <circle cx="70" cy="70" r="70"></circle>
+            </svg>
+            <div class="number flex flex-col">
+              <h2 class="text-white text-3xl block">65<span>%</span></h2>
+              <p class="text-gray-300 font-light text-[0.6rem] block">affdssf dfdf dfdfd</p>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between gap-3 p-4 h-full">
+            <p class="text-gray-300 font-light text-[0.6rem]">MoncTaTNcTyKD</p>
+            <div class="flex justify-between gap-3">
+              <i class="fa-solid fa-user-group text-gray-400"></i>
+              <h3 class="semibold text-base">100 434</h3>
+            </div>
+            <div class="flex justify-between">
+              <i class="fa-solid fa-heart-circle-check text-gray-400"></i>
+              <h3 class="semibold text-base">100 434</h3>
+            </div>
+            <div class="flex justify-between">
+              <i class="fa-solid fa-heart-circle-check text-gray-400"></i>
+              <h3 class="semibold text-base">3 999</h3>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col h-full border border-gray-700 m-5 rounded-xl">
+          <div class="flex justify-start h-full p-4 gap-3">
+            <div class="flex flex-col justify-between gap-5 ">
+              <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaTNcTyKD</p>
+              <i class="fa-solid fa-user-group text-gray-400"></i>
+              <h3 class="semibold text-3xl">24</h3>
+              <p class="text-gray-300 font-light text-[0.6rem] ">MoncTaT <br> NcTyKD</p>
+            </div>
+            <div class="flex flex-col justify-between gap-5">
+              <p class="text-gray-300 font-light text-[0.6rem]"></p>
+              <i class="fa-solid fa-user-group text-gray-400"></i>
+              <h3 class="semibold text-3xl">100</h3>
+              <p class="text-gray-300 font-light text-[0.6rem]">MoncTaT <br> NcTyKD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-[#192233] rounded-xl row-span-2 col-span-4 px-6 py-4 flex items-center justify-center gap-3 w-full">
+        <i class="fa-solid fa-circle-check text-2xl"></i>
+        <div class="flex flex-col justify-center">
+          <p class="text-gray-400 font-light text-[0.74rem]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Lorem ipsum dolor sit.</p>
+          <h3 class="bold text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, jsdjtur! Lorem ipsum dolor sit</h3>
+        </div>
+      </div>
+      <div class="bg-[#212C42] mt-8 rounded-tl-[1.9rem] rounded-tr-[1.9rem] flex flex-col gap-7">
+        <div class="rounded-xl w-full h-[180.38px] flex flex-col justify-between gap-7">
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">START</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">3650 / <span class="text-gray-400">5000</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">394 / <span class="text-gray-400">800</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+        </div>
+        <div class="rounded-xl w-full h-[180.38px] flex flex-col justify-between gap-7">
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">395 / <span class="text-gray-400">800</span></h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">3%</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+          <div class="bg-[#192233] rounded-xl w-full h-full py-8 flex flex-col justify-center items-center gap-4">
+            <p class="text-gray-400 font-light text-[0.74rem]">Tekyuma TEqwao</p>
+            <h3 class="bold text-sm">94 KAMenta</h3>
+            <button class="text-gray-400 font-light text-[0.74rem] px-5 p-2 border border-[#637CE4] rounded-lg">yummyTb ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const aside = document.querySelector('aside');
+  hamburger.addEventListener('click', function(){
+    aside.classList.toggle('menu');
+  })
+</script>
+</body>
+</html>
